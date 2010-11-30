@@ -46,7 +46,6 @@ class Queue(BaseQueue):
             if not m:
                 return None
             else:
-                self._queue.delete()
                 return m.get_body()
         except SQSError, e:
             raise QueueException, "%s" % e.code
